@@ -15,12 +15,6 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(cors());
 
-app.use((req, _res, next) => {
-  console.log("Headers:", req.headers);
-  console.log("Body:", req.body);
-  next();
-});
-
 app.use("/users", userRoutes);
 
 app.use(
