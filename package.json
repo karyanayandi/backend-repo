@@ -1,0 +1,38 @@
+{
+  "name": "backend-repo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "core/app.ts",
+  "scripts": {
+    "dev": "nodemon --exec ts-node ./core/app.ts",
+    "start": "node ./functions/dist/core/app.js",
+    "prebuild": "cp -r common config controller core entities middleware repository routes functions/src",
+    "build": "tsc -p functions/tsconfig.json",
+    "deploy": "npm run build && firebase emulators:start --only functions"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/karyanayandi/backend-repo.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/karyanayandi/backend-repo/issues"
+  },
+  "homepage": "https://github.com/karyanayandi/backend-repo#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^5.0.1",
+    "firebase-admin": "^13.0.1",
+    "firebase-functions": "^6.1.1",
+    "uuid": "^11.0.3"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "nodemon": "^3.1.7",
+    "ts-node": "^10.9.2"
+  },
+  "packageManager": "npm@10.9.0"
+}

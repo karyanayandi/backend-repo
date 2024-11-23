@@ -1,0 +1,13 @@
+dist
+
+firebase-debug.log
+firestore-debug.log
+
+ui-debug.log
+
+# Dependency
+node_modules
+
+# Environment
+.env
+middleware/authMiddleware.ts
